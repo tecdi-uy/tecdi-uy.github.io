@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="es" class="l-es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TeCDi · Tu compañero digital</title>
+<meta name="description" content="Ciberseguridad simple para personas comunes. De Uruguay para toda América, en español, português y English. Consejos claros para evitar estafas digitales.">
+<meta name="theme-color" content="#0f1d36">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icono.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tecdi-uy.github.io/">
+<link rel="canonical" href="https://tecdi-uy.github.io/">
+<meta property="og:site_name" content="TeCDi">
+<meta property="og:title" content="TeCDi · Tu compañero digital">
+<meta property="og:description" content="Ciberseguridad simple para personas comunes. De Uruguay para toda América, en español, português y English.">
+<meta property="og:image" content="https://tecdi-uy.github.io/img/og-tecdi.jpg">
+<meta property="og:locale" content="es_LA">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TeCDi · Tu compañero digital",
+  "alternateName": "TeCDi.uy",
+  "description": "Ciberseguridad simple para personas comunes. De Uruguay para toda América, en español, português y English.",
+  "url": "https://tecdi-uy.github.io/",
+  "logo": "https://tecdi-uy.github.io/img/icono.png",
+  "areaServed": "Americas",
+  "knowsLanguage": ["es", "pt-BR", "en"],
+  "address": {"@type": "PostalAddress", "addressLocality": "Montevideo", "addressCountry": "UY"},
+  "sameAs": [
+    "https://www.linkedin.com/company/tecdi-uy-ciberseguridad",
+    "https://www.instagram.com/tecdi.uy",
+    "https://www.tiktok.com/@tecdi.uy",
+    "https://whatsapp.com/channel/0029VbDzyfh8vd1LbCXTzX04"
+  ]
+}
+</script>
+<style>
+:root{
+  --navy-900:#0a1428;
+  --navy-800:#0f1d36;
+  --navy-700:#16284a;
+  --navy-600:#1f3560;
+  --silver-100:#f2f4f7;
+  --silver-200:#dfe3ea;
+  --silver-400:#a9b2c1;
+  --silver-500:#8a94a6;
+  --accent:#4fc3f7;
+  --wa:#25d366;
+  --text:#e9edf3;
+  --muted:#aab4c4;
+  --radius:18px;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--navy-900);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Montserrat,Inter,sans-serif;line-height:1.15;margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* Idiomas: solo se ve el bloque del idioma activo */
+.l-es [data-l]:not([data-l="es"]),
+.l-pt [data-l]:not([data-l="pt"]),
+.l-en [data-l]:not([data-l="en"]){display:none !important}
+
+/* Encabezado */
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(10,20,40,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:10px}
+.brand b{font-family:Montserrat,sans-serif;font-weight:800;letter-spacing:.12em;font-size:18px;
+  background:linear-gradient(180deg,#fff,var(--silver-400));-webkit-background-clip:text;background-clip:text;color:transparent}
+.langs{display:flex;background:var(--navy-700);border-radius:999px;padding:4px;gap:2px}
+.langs button{
+  border:0;background:transparent;color:var(--muted);font:600 13px/1 Montserrat,sans-serif;
+  letter-spacing:.06em;padding:8px 12px;border-radius:999px;cursor:pointer;
+}
+.langs button[aria-pressed="true"]{background:var(--silver-200);color:var(--navy-900)}
+
+/* Portada */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 85% 10%, rgba(79,195,247,.14), transparent 60%),
+    radial-gradient(700px 500px at 0% 100%, rgba(31,53,96,.9), transparent 70%),
+    linear-gradient(180deg,var(--navy-800),var(--navy-900));
+}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:72px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 Montserrat,sans-serif;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px}
+.hero h1{font-size:clamp(34px,5.4vw,58px);font-weight:800;letter-spacing:-.01em}
+.hero h1 span{background:linear-gradient(180deg,#fff 20%,var(--silver-400));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--muted);margin:20px 0 30px;max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  font:700 16px/1 Montserrat,sans-serif;padding:16px 22px;border-radius:14px;transition:transform .15s,box-shadow .15s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#06331a;box-shadow:0 10px 30px rgba(37,211,102,.25)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.22);color:var(--text)}
+.btn svg{width:20px;height:20px;flex:none}
+.flags{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:var(--silver-500);font-size:14px}
+.flags span{display:flex;align-items:center;gap:6px}
+.flags span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+.avatar{position:relative;justify-self:center;width:min(320px,100%)}
+.avatar::before{content:"";position:absolute;inset:-14px;border-radius:28px;
+  background:linear-gradient(160deg,rgba(255,255,255,.35),rgba(255,255,255,.04) 40%,rgba(79,195,247,.35));z-index:0}
+.avatar img{position:relative;z-index:1;border-radius:22px;width:100%;aspect-ratio:240/426;object-fit:cover;
+  box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.bubble{
+  position:absolute;z-index:2;left:-28px;bottom:42px;max-width:220px;
+  background:var(--silver-100);color:var(--navy-900);border-radius:16px 16px 16px 4px;
+  padding:12px 14px;font:600 14px/1.35 Montserrat,sans-serif;box-shadow:0 14px 30px rgba(0,0,0,.35)
+}
+
+/* Secciones */
+section{padding:84px 0}
+.sec-head{max-width:720px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800}
+.sec-head p{color:var(--muted);margin:14px 0 0}
+
+/* Reglas */
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.rule{
+  background:linear-gradient(180deg,var(--navy-700),var(--navy-800));
+  border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:26px 22px;
+}
+.rule .n{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;
+  font:800 20px/1 Montserrat,sans-serif;color:var(--navy-900);
+  background:linear-gradient(180deg,#fff,var(--silver-400));
+}
+.rule h3{font-size:19px;font-weight:700;margin-bottom:10px}
+.rule p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* Semana */
+.alt{background:var(--navy-800)}
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.day{border-radius:16px;padding:20px 18px;background:var(--navy-900);border:1px solid rgba(255,255,255,.06)}
+.day small{display:block;font:700 12px/1 Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.day b{display:block;font-family:Montserrat,sans-serif;font-size:16px;margin-bottom:6px}
+.day span{color:var(--muted);font-size:14.5px}
+
+/* América */
+.americas{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.lang-cards{display:grid;gap:12px}
+.lang-card{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:14px;background:var(--navy-700);border:1px solid rgba(255,255,255,.06)}
+.lang-card i{font:800 13px/1 Montserrat,sans-serif;font-style:normal;letter-spacing:.08em;color:var(--navy-900);
+  background:var(--silver-200);border-radius:8px;padding:8px 9px;flex:none}
+.lang-card div{font-size:15.5px;color:var(--muted)}
+.lang-card div b{color:var(--text);display:block;font-family:Montserrat,sans-serif}
+
+/* Canales */
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ch{
+  display:flex;flex-direction:column;gap:10px;text-decoration:none;padding:22px;border-radius:var(--radius);
+  background:var(--navy-700);border:1px solid rgba(255,255,255,.07);transition:transform .15s,border-color .15s
+}
+.ch:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.22)}
+.ch svg{width:28px;height:28px}
+.ch b{font-family:Montserrat,sans-serif;font-size:17px}
+.ch span{color:var(--muted);font-size:14.5px}
+.ch.wa{background:linear-gradient(160deg,#0f3d26,var(--navy-700));border-color:rgba(37,211,102,.35)}
+
+/* Cierre */
+.final{text-align:center}
+.final .wrap{max-width:760px}
+.final img{width:120px;margin:0 auto 22px;border-radius:24px}
+.final h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:14px}
+.final p{color:var(--muted);margin:0 0 28px}
+.final .ctas{justify-content:center}
+
+footer{border-top:1px solid rgba(255,255,255,.07);padding:28px 0;color:var(--silver-500);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:960px){
+  .rules{grid-template-columns:repeat(2,1fr)}
+  .week{grid-template-columns:repeat(2,1fr)}
+  .channels{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .hero .wrap{grid-template-columns:1fr;padding-top:40px;padding-bottom:56px;gap:44px}
+  .avatar{width:min(260px,78%)}
+  .bubble{left:-10px}
+  section{padding:64px 0}
+  .americas{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+}
+@media (max-width:520px){
+  .rules,.week,.channels{grid-template-columns:1fr}
+  .brand b{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="TeCDi">
+      <img src="img/icono.png" alt="Logo TeCDi" width="38" height="38">
+      <b>TECDI</b>
+    </a>
+    <div class="langs" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="es" aria-pressed="true">ES</button>
+      <button type="button" data-set="pt" aria-pressed="false">PT</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- PORTADA -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">
+        <span data-l="es">Tu compañero digital</span>
+        <span data-l="pt">Seu companheiro digital</span>
+        <span data-l="en">Your digital companion</span>
+      </div>
+      <h1 data-l="es">Ciberseguridad <span>simple</span> para personas comunes.</h1>
+      <h1 data-l="pt">Cibersegurança <span>simples</span> para pessoas comuns.</h1>
+      <h1 data-l="en">Cybersecurity made <span>simple</span> for everyday people.</h1>
+
+      <p class="lead" data-l="es">De Uruguay para toda América. Cada semana, una estafa explicada en palabras claras y una acción concreta para que no te pase a ti ni a tu familia.</p>
+      <p class="lead" data-l="pt">Do Uruguai para todas as Américas. Toda semana, um golpe explicado em palavras simples e uma ação prática para que não aconteça com você nem com sua família.</p>
+      <p class="lead" data-l="en">From Uruguay to all of the Americas. Every week, one scam explained in plain words and one simple action to keep you and your family safe.</p>
+
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://whatsapp.com/channel/0029VbDzyfh8vd1LbCXTzX04" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+          <span data-l="es">Únete al canal de WhatsApp</span>
+          <span data-l="pt">Entre no canal do WhatsApp</span>
+          <span data-l="en">Join the WhatsApp channel</span>
+        </a>
+        <a class="btn btn-ghost" href="#reglas">
+          <span data-l="es">Ver las 4 reglas de oro</span>
+          <span data-l="pt">Ver as 4 regras de ouro</span>
+          <span data-l="en">See the 4 golden rules</span>
+        </a>
+      </div>
+
+      <div class="flags">
+        <span>Español</span><span>Português</span><span>English</span>
+      </div>
+    </div>
+
+    <div class="avatar">
+      <img src="img/tecdi-personaje.jpg" alt="TeCDi, el personaje de la marca, sentado frente a su computadora con un mate" width="240" height="426">
+      <div class="bubble">
+        <span data-l="es">¿Te apuran? Pausa y verifica.</span>
+        <span data-l="pt">Pressa? Pausa e confirma.</span>
+        <span data-l="en">Rushed? Pause and verify.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4 REGLAS -->
+<section id="reglas">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-l="es">Las 4 reglas de oro</h2>
+      <h2 data-l="pt">As 4 regras de ouro</h2>
+      <h2 data-l="en">The 4 golden rules</h2>
+      <p data-l="es">Ninguna requiere conocimientos técnicos. Requieren, sobre todo, decidir aplicarlas.</p>
+      <p data-l="pt">Nenhuma exige conhecimento técnico. Exigem, sobretudo, a decisão de aplicá-las.</p>
+      <p data-l="en">None of them requires technical knowledge. They require, above all, a decision to apply them.</p>
+    </div>
+
+    <div class="rules">
+      <article class="rule">
+        <div class="n">1</div>
+        <h3 data-l="es">Una contraseña distinta para cada cuenta</h3>
+        <h3 data-l="pt">Uma senha diferente para cada conta</h3>
+        <h3 data-l="en">A different password for every account</h3>
+        <p data-l="es">Si una se filtra, las demás siguen a salvo. Una frase larga es más segura y más fácil de recordar, y un gestor de contraseñas hace el resto.</p>
+        <p data-l="pt">Se uma vazar, as outras continuam protegidas. Uma frase longa é mais segura e mais fácil de lembrar, e um gerenciador de senhas faz o resto.</p>
+        <p data-l="en">If one leaks, the rest stay safe. A long passphrase is stronger and easier to remember, and a password manager does the rest.</p>
+      </article>
+      <article class="rule">
+        <div class="n">2</div>
+        <h3 data-l="es">Verificación en dos pasos</h3>
+        <h3 data-l="pt">Verificação em duas etapas</h3>
+        <h3 data-l="en">Two-step verification</h3>
+        <p data-l="es">Actívala en todo lo que la ofrezca. Empieza por WhatsApp, el correo y la banca en línea.</p>
+        <p data-l="pt">Ative em tudo que oferecer. Comece pelo WhatsApp, e-mail e banco.</p>
+        <p data-l="en">Turn it on wherever it's offered. Start with WhatsApp, email and online banking.</p>
+      </article>
+      <article class="rule">
+        <div class="n">3</div>
+        <h3 data-l="es">Actualizaciones al día</h3>
+        <h3 data-l="pt">Atualizações em dia</h3>
+        <h3 data-l="en">Keep everything updated</h3>
+        <p data-l="es">Cada actualización pendiente es una puerta que otros ya saben abrir. Instálalas apenas aparezcan.</p>
+        <p data-l="pt">Cada atualização pendente é uma porta que outros já sabem abrir. Instale assim que aparecerem.</p>
+        <p data-l="en">Every pending update is a door someone already knows how to open. Install them as soon as they show up.</p>
+      </article>
+      <article class="rule">
+        <div class="n">4</div>
+        <h3 data-l="es">Ante la urgencia, pausa</h3>
+        <h3 data-l="pt">Diante da urgência, pausa</h3>
+        <h3 data-l="en">When rushed, pause</h3>
+        <p data-l="es">Nadie serio te pide un código por mensaje ni una transferencia inmediata. Si hay apuro, corta y verifica por otro canal.</p>
+        <p data-l="pt">Ninguém sério pede código por mensagem nem transferência imediata. Se há pressa, desligue e confirme por outro canal.</p>
+        <p data-l="en">No serious organization asks for a code by text or an immediate transfer. If there's pressure, hang up and verify another way.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SEMANA -->
+<section class="alt" id="semana">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-l="es">Un tema por semana, en cinco formatos</h2>
+      <h2 data-l="pt">Um tema por semana, em cinco formatos</h2>
+      <h2 data-l="en">One topic a week, in five formats</h2>
+      <p data-l="es">Robo de cuentas de WhatsApp, clonación de voz, deepfakes, SMS falsos, tiendas falsas… Lo vemos con calma y en el formato que prefieras.</p>
+      <p data-l="pt">Roubo de contas de WhatsApp, clonagem de voz, deepfakes, SMS falsos, lojas falsas… Explicamos com calma e no formato que você preferir.</p>
+      <p data-l="en">WhatsApp account theft, voice cloning, deepfakes, fake texts, fake online stores… We break it down calmly, in the format you like best.</p>
+    </div>
+    <div class="week">
+      <div class="day">
+        <small data-l="es">Lunes</small><small data-l="pt">Segunda</small><small data-l="en">Monday</small>
+        <b data-l="es">Artículo</b><b data-l="pt">Artigo</b><b data-l="en">Article</b>
+        <span data-l="es">Análisis en LinkedIn</span><span data-l="pt">Análise no LinkedIn</span><span data-l="en">In-depth on LinkedIn</span>
+      </div>
+      <div class="day">
+        <small data-l="es">Martes</small><small data-l="pt">Terça</small><small data-l="en">Tuesday</small>
+        <b data-l="es">Carrusel</b><b data-l="pt">Carrossel</b><b data-l="en">Carousel</b>
+        <span data-l="es">Instagram y Facebook</span><span data-l="pt">Instagram e Facebook</span><span data-l="en">Instagram &amp; Facebook</span>
+      </div>
+      <div class="day">
+        <small data-l="es">Miércoles</small><small data-l="pt">Quarta</small><small data-l="en">Wednesday</small>
+        <b data-l="es">Video corto</b><b data-l="pt">Vídeo curto</b><b data-l="en">Short video</b>
+        <span>TikTok · Reels · Shorts</span>
+      </div>
+      <div class="day">
+        <small data-l="es">Jueves</small><small data-l="pt">Quinta</small><small data-l="en">Thursday</small>
+        <b>Podcast</b>
+        <span data-l="es">8 a 10 minutos</span><span data-l="pt">8 a 10 minutos</span><span data-l="en">8 to 10 minutes</span>
+      </div>
+      <div class="day">
+        <small data-l="es">Viernes</small><small data-l="pt">Sexta</small><small data-l="en">Friday</small>
+        <b data-l="es">Tip rápido</b><b data-l="pt">Dica rápida</b><b data-l="en">Quick tip</b>
+        <span data-l="es">Para aplicar en 1 minuto</span><span data-l="pt">Para aplicar em 1 minuto</span><span data-l="en">Done in one minute</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMÉRICA -->
+<section id="america">
+  <div class="wrap americas">
+    <div class="sec-head" style="margin-bottom:0">
+      <h2 data-l="es">De Uruguay para toda América</h2>
+      <h2 data-l="pt">Do Uruguai para todas as Américas</h2>
+      <h2 data-l="en">From Uruguay to all of the Americas</h2>
+      <p data-l="es">Las estafas cruzan fronteras: cambian el idioma y la moneda, pero el truco es el mismo. Por eso TeCDi habla en tres idiomas, desde Canadá hasta la Patagonia, con datos de cada país.</p>
+      <p data-l="pt">Os golpes atravessam fronteiras: mudam o idioma e a moeda, mas o truque é o mesmo. Por isso o TeCDi fala três idiomas, do Canadá à Patagônia, com dados de cada país.</p>
+      <p data-l="en">Scams cross borders: the language and currency change, but the trick stays the same. That's why TeCDi speaks three languages, from Canada to Patagonia, with data from each country.</p>
+    </div>
+    <div class="lang-cards">
+      <div class="lang-card"><i>ES</i><div><b>Español</b>
+        <span data-l="es">Neutro y cercano, para toda Hispanoamérica.</span><span data-l="pt">Neutro e próximo, para toda a América hispânica.</span><span data-l="en">Neutral and friendly, for all of Spanish-speaking America.</span></div></div>
+      <div class="lang-card"><i>PT</i><div><b>Português</b>
+        <span data-l="es">Del Brasil, con você.</span><span data-l="pt">Do Brasil, com você.</span><span data-l="en">Brazilian Portuguese.</span></div></div>
+      <div class="lang-card"><i>EN</i><div><b>English</b>
+        <span data-l="es">Claro y simple, para EE. UU. y Canadá.</span><span data-l="pt">Claro e simples, para EUA e Canadá.</span><span data-l="en">Plain and friendly, for the US and Canada.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CANALES -->
+<section class="alt" id="canales">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-l="es">Síguenos donde estés</h2>
+      <h2 data-l="pt">Siga a gente onde você estiver</h2>
+      <h2 data-l="en">Follow us wherever you are</h2>
+    </div>
+    <div class="channels">
+      <a class="ch wa" href="https://whatsapp.com/channel/0029VbDzyfh8vd1LbCXTzX04" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#25d366" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+        <b>WhatsApp</b>
+        <span data-l="es">Las alertas, directo a tu celular</span><span data-l="pt">Os alertas, direto no seu celular</span><span data-l="en">Alerts straight to your phone</span>
+      </a>
+      <a class="ch" href="https://www.linkedin.com/company/tecdi-uy-ciberseguridad" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#9fc7ff" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.15-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg>
+        <b>LinkedIn</b>
+        <span data-l="es">Artículos cada lunes</span><span data-l="pt">Artigos toda segunda</span><span data-l="en">Articles every Monday</span>
+      </a>
+      <a class="ch" href="https://www.instagram.com/tecdi.uy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f3a6d0" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#f3a6d0"/></svg>
+        <b>Instagram</b>
+        <span>@tecdi.uy</span>
+      </a>
+      <a class="ch" href="https://www.tiktok.com/@tecdi.uy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#e9edf3" aria-hidden="true"><path d="M16.6 3c.3 2.1 1.6 3.6 3.9 3.8v3.1a7 7 0 0 1-3.9-1.2v6.2A5.9 5.9 0 1 1 10.7 9v3.2a2.8 2.8 0 1 0 2.1 2.7V3h3.8Z"/></svg>
+        <b>TikTok</b>
+        <span>@tecdi.uy</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="final">
+  <div class="wrap">
+    <img src="img/logo-vertical.jpg" alt="TECDI" width="120">
+    <h2 data-l="es">Un minuto por semana puede ahorrarte un mal momento.</h2>
+    <h2 data-l="pt">Um minuto por semana pode evitar uma grande dor de cabeça.</h2>
+    <h2 data-l="en">One minute a week can save you a lot of trouble.</h2>
+    <p data-l="es">Gratis, sin tecnicismos y en tu idioma.</p>
+    <p data-l="pt">Grátis, sem tecniquês e no seu idioma.</p>
+    <p data-l="en">Free, jargon-free and in your language.</p>
+    <div class="ctas">
+      <a class="btn btn-wa" href="https://whatsapp.com/channel/0029VbDzyfh8vd1LbCXTzX04" target="_blank" rel="noopener">
+        <span data-l="es">Únete al canal de WhatsApp</span>
+        <span data-l="pt">Entre no canal do WhatsApp</span>
+        <span data-l="en">Join the WhatsApp channel</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>TeCDi.uy · Montevideo, Uruguay · © 2026</span>
+    <span data-l="es">Prevención de riesgos digitales para personas comunes.</span>
+    <span data-l="pt">Prevenção de riscos digitais para pessoas comuns.</span>
+    <span data-l="en">Digital risk prevention for everyday people.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var titles={
+    es:"TeCDi · Tu compañero digital",
+    pt:"TeCDi · Seu companheiro digital",
+    en:"TeCDi · Your digital companion"
+  };
+  var htmlLang={es:"es",pt:"pt-BR",en:"en"};
+  function set(l){
+    if(!titles[l]) l="es";
+    root.className="l-"+l;
+    root.lang=htmlLang[l];
+    document.title=titles[l];
+    var b=document.querySelectorAll(".langs button");
+    for(var i=0;i<b.length;i++) b[i].setAttribute("aria-pressed", b[i].getAttribute("data-set")===l ? "true":"false");
+    try{ localStorage.setItem("tecdi-lang",l); }catch(e){}
+    if(history.replaceState){ try{ history.replaceState(null,"","?lang="+l+location.hash); }catch(e){} }
+  }
+  var q=(location.search.match(/lang=(es|pt|en)/)||[])[1];
+  var saved=null; try{ saved=localStorage.getItem("tecdi-lang"); }catch(e){}
+  var nav=(navigator.language||"es").slice(0,2).toLowerCase();
+  set(q || saved || (nav==="pt"||nav==="en" ? nav : "es"));
+  document.querySelector(".langs").addEventListener("click",function(e){
+    var l=e.target && e.target.getAttribute && e.target.getAttribute("data-set");
+    if(l) set(l);
+  });
+})();
+</script>
+</body>
+</html>
