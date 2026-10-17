@@ -39,6 +39,7 @@
     "https://www.instagram.com/tecdi.uy",
     "https://www.facebook.com/profile.php?id=61589308195781",
     "https://www.tiktok.com/@tecdi.uy",
+    "https://www.youtube.com/@tecdiuy",
     "https://whatsapp.com/channel/0029VbDzyfh8vd1LbCXTzX04"
   ]
 }
@@ -173,7 +174,7 @@ section{padding:84px 0}
 .lang-card div b{color:var(--text);display:block;font-family:Montserrat,sans-serif}
 
 /* Canales */
-.channels{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.channels{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
 .ch{
   display:flex;flex-direction:column;gap:10px;text-decoration:none;padding:22px;border-radius:var(--radius);
   background:var(--navy-700);border:1px solid rgba(255,255,255,.07);transition:transform .15s,border-color .15s
@@ -196,28 +197,76 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:28px 0;color:var(--sil
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 
-/* Publicaciones */
-.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.post{display:flex;flex-direction:column;text-decoration:none;border-radius:var(--radius);overflow:hidden;
-  background:var(--navy-700);border:1px solid rgba(255,255,255,.07);transition:transform .15s,border-color .15s}
-.post:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.22)}
-.post .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;
-  background:linear-gradient(135deg,var(--navy-600),var(--navy-800))}
-.post .top svg{width:30px;height:30px;color:var(--accent);flex:none}
-.post .tag{font:700 11.5px/1 Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--silver-200);
-  background:rgba(255,255,255,.08);border-radius:999px;padding:7px 10px}
-.post .body{display:flex;flex-direction:column;gap:10px;padding:20px 22px 22px;flex:1}
-.post time{font-size:13.5px;color:var(--silver-500)}
-.post h3{font-size:18px;font-weight:700}
-.post p{margin:0;color:var(--muted);font-size:15px;flex:1}
-.post .more{font:700 14.5px/1 Montserrat,sans-serif;color:var(--accent);margin-top:6px}
-.posts-all{margin-top:28px}
+
+
+/* Galería de temas */
+.formats{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 36px}
+.fmt{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:var(--navy-900);
+  border:1px solid rgba(255,255,255,.07);font-size:14.5px;color:var(--muted)}
+.fmt small{font:700 11px/1 Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.fmt b{color:var(--text);font:600 14.5px/1 Montserrat,sans-serif}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.topic{display:grid;grid-template-columns:150px 1fr;border-radius:var(--radius);overflow:hidden;
+  background:var(--navy-900);border:1px solid rgba(255,255,255,.07);transition:transform .2s,border-color .2s,box-shadow .2s}
+.topic:hover{transform:translateY(-3px);border-color:rgba(79,195,247,.35);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.thumb{position:relative;display:block;min-height:250px;height:100%;background:var(--navy-700);overflow:hidden}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.topic:hover .thumb img{transform:scale(1.05)}
+.thumb .play{position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;
+  background:rgba(10,20,40,.72);display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.5)}
+.thumb .play svg{width:20px;height:20px;margin-left:3px;fill:#fff}
+.thumb.art{display:grid;place-items:center;background:
+  radial-gradient(120px 160px at 30% 20%,rgba(79,195,247,.35),transparent 70%),linear-gradient(160deg,var(--navy-600),var(--navy-800))}
+.thumb.art svg{width:56px;height:56px;color:var(--accent)}
+.topic .info{display:flex;flex-direction:column;gap:10px;padding:20px 22px}
+.topic .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;color:var(--silver-500)}
+.topic .tag{font:700 11px/1 Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-900);
+  background:var(--accent);border-radius:999px;padding:6px 9px}
+.topic .new{background:var(--wa)}
+.topic h3{font-size:19px;font-weight:700}
+.topic p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.links a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:600 13.5px/1 Montserrat,sans-serif;
+  padding:9px 12px;border-radius:10px;background:var(--navy-700);border:1px solid rgba(255,255,255,.08);transition:background .15s}
+.links a:hover{background:var(--navy-600)}
+.links svg{width:15px;height:15px;flex:none}
+.more-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* Curso del mes */
+.course{display:grid;grid-template-columns:1.2fr .8fr;gap:0;border-radius:24px;overflow:hidden;
+  border:1px solid rgba(79,195,247,.3);background:linear-gradient(135deg,var(--navy-700),var(--navy-800))}
+.course .c-body{padding:36px 36px 34px}
+.course .badge{display:inline-block;font:700 12px/1 Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--navy-900);background:var(--wa);border-radius:999px;padding:8px 12px;margin-bottom:16px}
+.course h3{font-size:clamp(22px,2.6vw,28px);font-weight:800;margin-bottom:8px}
+.course .by{color:var(--silver-400);font-size:15px;margin-bottom:14px}
+.course p{color:var(--muted);margin:0 0 20px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.facts span{font:600 13.5px/1 Montserrat,sans-serif;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.06);color:var(--silver-200)}
+.course .c-side{display:grid;place-items:center;padding:30px;background:
+  radial-gradient(260px 220px at 60% 30%,rgba(79,195,247,.28),transparent 70%),var(--navy-900)}
+.course .c-side ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:15px;color:var(--muted)}
+.course .c-side li{display:flex;gap:10px;align-items:flex-start}
+.course .c-side li::before{content:"";flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--accent)}
+.course .note{display:block;margin-top:14px;font-size:12.5px;color:var(--silver-500)}
+
+/* Novedad en portada */
+.news{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:7px 14px 7px 7px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);text-decoration:none;font-size:14px;color:var(--silver-200)}
+.news b{font:700 11px/1 Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;background:var(--wa);color:#06331a;
+  padding:6px 9px;border-radius:999px}
+.news:hover{border-color:rgba(255,255,255,.25)}
+
+/* Animación de entrada */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
 
 @media (max-width:960px){
-  .posts{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr}
+  .channels{grid-template-columns:repeat(3,1fr)}
+  .course{grid-template-columns:1fr}
   .rules{grid-template-columns:repeat(2,1fr)}
   .week{grid-template-columns:repeat(2,1fr)}
-  .channels{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:760px){
   body{font-size:16px}
@@ -229,10 +278,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .btn{width:100%;justify-content:center}
 }
 @media (max-width:520px){
-  .rules,.week,.channels,.posts{grid-template-columns:1fr}
+  .rules,.week,.channels{grid-template-columns:1fr}
+  .topic{grid-template-columns:118px 1fr}
+  .course .c-body{padding:28px 22px}
+  .channels{grid-template-columns:1fr 1fr}
   .brand b{display:none}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -257,6 +309,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <div class="hero">
   <div class="wrap">
     <div>
+      <a class="news" href="#semana"><b data-l="es">Nuevo</b><b data-l="pt">Novo</b><b data-l="en">New</b>
+        <span data-l="es">¿Vale la pena empezar en ciberseguridad?</span><span data-l="pt">Vale a pena começar em cibersegurança?</span><span data-l="en">Is a cybersecurity career worth it?</span></a>
       <div class="eyebrow">
         <span data-l="es">Tu compañero digital</span>
         <span data-l="pt">Seu companheiro digital</span>
@@ -303,7 +357,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <!-- 4 REGLAS -->
 <section id="reglas">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <h2 data-l="es">Las 4 reglas de oro</h2>
       <h2 data-l="pt">As 4 regras de ouro</h2>
       <h2 data-l="en">The 4 golden rules</h2>
@@ -312,7 +366,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <p data-l="en">None of them requires technical knowledge. They require, above all, a decision to apply them.</p>
     </div>
 
-    <div class="rules">
+    <div class="rules reveal">
       <article class="rule">
         <div class="n">1</div>
         <h3 data-l="es">Una contraseña distinta para cada cuenta</h3>
@@ -353,147 +407,185 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- SEMANA -->
+<!-- SEMANA + GALERÍA DE TEMAS (para sumar un tema nuevo: copiar un bloque de 3 <article class="topic"> ES/PT/EN arriba de todo y mover la etiqueta "Nuevo") -->
 <section class="alt" id="semana">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <h2 data-l="es">Un tema por semana, en cinco formatos</h2>
       <h2 data-l="pt">Um tema por semana, em cinco formatos</h2>
       <h2 data-l="en">One topic a week, in five formats</h2>
-      <p data-l="es">Robo de cuentas de WhatsApp, clonación de voz, deepfakes, SMS falsos, tiendas falsas… Lo vemos con calma y en el formato que prefieras.</p>
-      <p data-l="pt">Roubo de contas de WhatsApp, clonagem de voz, deepfakes, SMS falsos, lojas falsas… Explicamos com calma e no formato que você preferir.</p>
-      <p data-l="en">WhatsApp account theft, voice cloning, deepfakes, fake texts, fake online stores… We break it down calmly, in the format you like best.</p>
+      <p data-l="es">Cada semana elegimos una estafa o un riesgo y lo contamos con calma: un artículo, un carrusel, un video corto, un podcast y un tip rápido. Estos son los temas que ya vimos.</p>
+      <p data-l="pt">Toda semana escolhemos um golpe ou um risco e explicamos com calma: um artigo, um carrossel, um vídeo curto, um podcast e uma dica rápida. Estes são os temas que já vimos.</p>
+      <p data-l="en">Each week we pick one scam or risk and explain it calmly: an article, a carousel, a short video, a podcast and a quick tip. Here are the topics so far.</p>
     </div>
-    <div class="week">
-      <div class="day">
-        <small data-l="es">Lunes</small><small data-l="pt">Segunda</small><small data-l="en">Monday</small>
-        <b data-l="es">Artículo</b><b data-l="pt">Artigo</b><b data-l="en">Article</b>
-        <span data-l="es">Análisis en LinkedIn</span><span data-l="pt">Análise no LinkedIn</span><span data-l="en">In-depth on LinkedIn</span>
-      </div>
-      <div class="day">
-        <small data-l="es">Martes</small><small data-l="pt">Terça</small><small data-l="en">Tuesday</small>
-        <b data-l="es">Carrusel</b><b data-l="pt">Carrossel</b><b data-l="en">Carousel</b>
-        <span data-l="es">Instagram y Facebook</span><span data-l="pt">Instagram e Facebook</span><span data-l="en">Instagram &amp; Facebook</span>
-      </div>
-      <div class="day">
-        <small data-l="es">Miércoles</small><small data-l="pt">Quarta</small><small data-l="en">Wednesday</small>
-        <b data-l="es">Video corto</b><b data-l="pt">Vídeo curto</b><b data-l="en">Short video</b>
-        <span>TikTok · Reels · Shorts</span>
-      </div>
-      <div class="day">
-        <small data-l="es">Jueves</small><small data-l="pt">Quinta</small><small data-l="en">Thursday</small>
-        <b>Podcast</b>
-        <span data-l="es">8 a 10 minutos</span><span data-l="pt">8 a 10 minutos</span><span data-l="en">8 to 10 minutes</span>
-      </div>
-      <div class="day">
-        <small data-l="es">Viernes</small><small data-l="pt">Sexta</small><small data-l="en">Friday</small>
-        <b data-l="es">Tip rápido</b><b data-l="pt">Dica rápida</b><b data-l="en">Quick tip</b>
-        <span data-l="es">Para aplicar en 1 minuto</span><span data-l="pt">Para aplicar em 1 minuto</span><span data-l="en">Done in one minute</span>
-      </div>
+    <div class="formats reveal">
+      <span class="fmt"><small data-l="es">Lun</small><small data-l="pt">Seg</small><small data-l="en">Mon</small><b data-l="es">Artículo</b><b data-l="pt">Artigo</b><b data-l="en">Article</b></span>
+      <span class="fmt"><small data-l="es">Mar</small><small data-l="pt">Ter</small><small data-l="en">Tue</small><b data-l="es">Carrusel</b><b data-l="pt">Carrossel</b><b data-l="en">Carousel</b></span>
+      <span class="fmt"><small data-l="es">Mié</small><small data-l="pt">Qua</small><small data-l="en">Wed</small><b data-l="es">Video corto</b><b data-l="pt">Vídeo curto</b><b data-l="en">Short video</b></span>
+      <span class="fmt"><small data-l="es">Jue</small><small data-l="pt">Qui</small><small data-l="en">Thu</small><b>Podcast</b></span>
+      <span class="fmt"><small data-l="es">Vie</small><small data-l="pt">Sex</small><small data-l="en">Fri</small><b data-l="es">Tip rápido</b><b data-l="pt">Dica rápida</b><b data-l="en">Quick tip</b></span>
+    </div>
+    <div class="gallery">
+      <article class="topic reveal" data-l="es">
+        <a class="thumb art" href="https://www.linkedin.com/pulse/vale-la-pena-empezar-en-ciberseguridad-lo-que-rid1f" target="_blank" rel="noopener" aria-label="Artículo: ¿Vale la pena empezar en ciberseguridad?"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></a>
+        <div class="info">
+          <div class="meta"><span class="tag new">Nuevo</span><span class="tag">Carrera</span><time>17 oct 2026</time></div>
+          <h3>¿Vale la pena empezar en ciberseguridad?</h3>
+          <p>Faltan cientos de miles de profesionales en América. Qué dicen los datos y cuáles son los primeros pasos para entrar al área.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/vale-la-pena-empezar-en-ciberseguridad-lo-que-rid1f" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Artículo</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="pt">
+        <a class="thumb art" href="https://www.linkedin.com/pulse/vale-pena-come%C3%A7ar-em-ciberseguran%C3%A7a-o-que-os-dados-m9ugf" target="_blank" rel="noopener" aria-label="Artigo: Vale a pena começar em cibersegurança?"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></a>
+        <div class="info">
+          <div class="meta"><span class="tag new">Novo</span><span class="tag">Carreira</span><time>17 out 2026</time></div>
+          <h3>Vale a pena começar em cibersegurança?</h3>
+          <p>Faltam centenas de milhares de profissionais nas Américas. O que os dados mostram e quais são os primeiros passos para entrar na área.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/vale-pena-come%C3%A7ar-em-ciberseguran%C3%A7a-o-que-os-dados-m9ugf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Artigo</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="en">
+        <a class="thumb art" href="https://www.linkedin.com/pulse/worth-starting-career-cybersecurity-what-data-ggubf" target="_blank" rel="noopener" aria-label="Article: Is a cybersecurity career worth it?"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></a>
+        <div class="info">
+          <div class="meta"><span class="tag new">New</span><span class="tag">Careers</span><time>Oct 17, 2026</time></div>
+          <h3>Is a cybersecurity career worth it?</h3>
+          <p>The Americas are short hundreds of thousands of professionals. What the data says and the first steps into the field.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/worth-starting-career-cybersecurity-what-data-ggubf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Article</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="es">
+        <a class="thumb" href="https://www.youtube.com/shorts/G4_kQVFKDoU" target="_blank" rel="noopener" aria-label="Video: Robo de cuentas de WhatsApp"><img src="https://i.ytimg.com/vi/G4_kQVFKDoU/oar2.jpg" data-fb="https://i.ytimg.com/vi/G4_kQVFKDoU/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">WhatsApp</span><time>12 oct 2026</time></div>
+          <h3>Robo de cuentas de WhatsApp</h3>
+          <p>Seis dígitos valen tu identidad. Cómo funciona el engaño del código y los ajustes de 5 minutos que lo frenan.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/seis-d%C3%ADgitos-que-valen-tu-identidad-c%C3%B3mo-roban-ltxyf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Artículo</a><a href="https://www.youtube.com/shorts/G4_kQVFKDoU" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>5 minutos</a><a href="https://www.youtube.com/shorts/awGNF_tpGm0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>El código</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="pt">
+        <a class="thumb" href="https://www.youtube.com/shorts/o1sA5U2YiqE" target="_blank" rel="noopener" aria-label="Vídeo: Roubo de contas de WhatsApp"><img src="https://i.ytimg.com/vi/o1sA5U2YiqE/oar2.jpg" data-fb="https://i.ytimg.com/vi/o1sA5U2YiqE/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">WhatsApp</span><time>12 out 2026</time></div>
+          <h3>Roubo de contas de WhatsApp</h3>
+          <p>Seis dígitos valem a sua identidade. Como funciona o golpe do código e os ajustes de 5 minutos que o impedem.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/seis-d%C3%ADgitos-que-valem-sua-identidade-como-roubam-aqf1f" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Artigo</a><a href="https://www.youtube.com/shorts/o1sA5U2YiqE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>5 minutos</a><a href="https://www.youtube.com/shorts/83rXmVghbyI" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>O código</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="en">
+        <a class="thumb" href="https://www.youtube.com/shorts/pICFgjY9zKU" target="_blank" rel="noopener" aria-label="Video: WhatsApp account hijacking"><img src="https://i.ytimg.com/vi/pICFgjY9zKU/oar2.jpg" data-fb="https://i.ytimg.com/vi/pICFgjY9zKU/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">WhatsApp</span><time>Oct 12, 2026</time></div>
+          <h3>WhatsApp account hijacking</h3>
+          <p>Six digits unlock your identity. How the code scam works and the 5-minute settings that stop it.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/six-digits-unlock-your-identity-how-whatsapp-accounts-wioxf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Article</a><a href="https://www.youtube.com/shorts/pICFgjY9zKU" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>5 minutes</a><a href="https://www.youtube.com/shorts/nbDTMfWUMCs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>The code</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="es">
+        <a class="thumb" href="https://www.youtube.com/shorts/A-4XUvXW1pc" target="_blank" rel="noopener" aria-label="Video: Contraseñas en la era de la IA"><img src="https://i.ytimg.com/vi/A-4XUvXW1pc/oar2.jpg" data-fb="https://i.ytimg.com/vi/A-4XUvXW1pc/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">Contraseñas</span><time>5 oct 2026</time></div>
+          <h3>Contraseñas en la era de la IA</h3>
+          <p>Una contraseña para todo es una sola llave para toda tu casa. Cuatro hábitos simples para la era de las estafas con IA.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/la-contrase%C3%B1a-ya-alcanza-cuatro-h%C3%A1bitos-para-era-dv8nf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Artículo</a><a href="https://www.youtube.com/shorts/A-4XUvXW1pc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>Regla 1</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="pt">
+        <a class="thumb" href="https://www.youtube.com/shorts/TMMOOahvsN0" target="_blank" rel="noopener" aria-label="Vídeo: Senhas na era da IA"><img src="https://i.ytimg.com/vi/TMMOOahvsN0/oar2.jpg" data-fb="https://i.ytimg.com/vi/TMMOOahvsN0/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">Senhas</span><time>5 out 2026</time></div>
+          <h3>Senhas na era da IA</h3>
+          <p>Uma senha para tudo é uma única chave para a casa inteira. Quatro hábitos simples para a era dos golpes com IA.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/senha-j%C3%A1-n%C3%A3o-basta-quatro-h%C3%A1bitos-para-era-dos-g9i7f" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Artigo</a><a href="https://www.youtube.com/shorts/TMMOOahvsN0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>Regra 1</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="en">
+        <a class="thumb" href="https://www.youtube.com/shorts/RwvgaGNt44I" target="_blank" rel="noopener" aria-label="Video: Passwords in the age of AI"><img src="https://i.ytimg.com/vi/RwvgaGNt44I/oar2.jpg" data-fb="https://i.ytimg.com/vi/RwvgaGNt44I/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">Passwords</span><time>Oct 5, 2026</time></div>
+          <h3>Passwords in the age of AI</h3>
+          <p>One password for everything is one key to your whole house. Four simple habits for the age of AI scams.</p>
+          <div class="links"><a href="https://www.linkedin.com/pulse/passwords-longer-enough-four-habits-age-ai-scams-ebcwf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Article</a><a href="https://www.youtube.com/shorts/RwvgaGNt44I" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>Rule 1</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="es">
+        <a class="thumb" href="https://www.youtube.com/shorts/58VGGNWmZ-E" target="_blank" rel="noopener" aria-label="Video: Conoce a TeCDi"><img src="https://i.ytimg.com/vi/58VGGNWmZ-E/oar2.jpg" data-fb="https://i.ytimg.com/vi/58VGGNWmZ-E/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">Presentación</span><time>1 oct 2026</time></div>
+          <h3>Conoce a TeCDi</h3>
+          <p>¿Te llegó un mensaje raro? Alto. Así nos presentamos: tu compañero digital para frenar estafas, en tu idioma.</p>
+          <div class="links"><a href="https://www.youtube.com/shorts/58VGGNWmZ-E" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>Ver video</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="pt">
+        <a class="thumb" href="https://www.youtube.com/shorts/_cHN1hxv6e8" target="_blank" rel="noopener" aria-label="Vídeo: Conheça o TeCDi"><img src="https://i.ytimg.com/vi/_cHN1hxv6e8/oar2.jpg" data-fb="https://i.ytimg.com/vi/_cHN1hxv6e8/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">Apresentação</span><time>1 out 2026</time></div>
+          <h3>Conheça o TeCDi</h3>
+          <p>Recebeu uma mensagem estranha? Pare. Assim nos apresentamos: seu companheiro digital contra golpes, no seu idioma.</p>
+          <div class="links"><a href="https://www.youtube.com/shorts/_cHN1hxv6e8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>Ver vídeo</a></div>
+        </div>
+      </article>
+      <article class="topic reveal" data-l="en">
+        <a class="thumb" href="https://www.youtube.com/shorts/9mXA9POzDwg" target="_blank" rel="noopener" aria-label="Video: Meet TeCDi"><img src="https://i.ytimg.com/vi/9mXA9POzDwg/oar2.jpg" data-fb="https://i.ytimg.com/vi/9mXA9POzDwg/hqdefault.jpg" alt="" loading="lazy" width="150" height="267"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <div class="info">
+          <div class="meta"><span class="tag">Intro</span><time>Oct 1, 2026</time></div>
+          <h3>Meet TeCDi</h3>
+          <p>Got a strange message? Stop. Meet your digital companion against scams, in your language.</p>
+          <div class="links"><a href="https://www.youtube.com/shorts/9mXA9POzDwg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>Watch</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="more-row reveal">
+      <a class="btn btn-ghost" href="https://www.linkedin.com/company/tecdi-uy-ciberseguridad/posts/?feedView=articles" target="_blank" rel="noopener">
+        <span data-l="es">Todos los artículos</span><span data-l="pt">Todos os artigos</span><span data-l="en">All articles</span>
+      </a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/@tecdiuy/shorts" target="_blank" rel="noopener">
+        <span data-l="es">Todos los videos</span><span data-l="pt">Todos os vídeos</span><span data-l="en">All videos</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- PUBLICACIONES (para agregar un artículo nuevo, copiar un bloque de 3 tarjetas ES/PT/EN arriba de todo) -->
-<section id="publicaciones">
+<!-- CURSO GRATIS DEL MES (cambiar cada mes) -->
+<section id="curso">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 data-l="es">Últimas publicaciones</h2>
-      <h2 data-l="pt">Últimas publicações</h2>
-      <h2 data-l="en">Latest articles</h2>
-      <p data-l="es">Cada lunes, un análisis en LinkedIn con datos de toda América y consejos que puedes aplicar hoy.</p>
-      <p data-l="pt">Toda segunda, uma análise no LinkedIn com dados de todas as Américas e dicas para aplicar hoje.</p>
-      <p data-l="en">Every Monday, an in-depth LinkedIn article with data from across the Americas and tips you can use today.</p>
+    <div class="sec-head reveal">
+      <h2 data-l="es">Curso gratis del mes</h2>
+      <h2 data-l="pt">Curso grátis do mês</h2>
+      <h2 data-l="en">Free course of the month</h2>
+      <p data-l="es">Cada mes recomendamos un curso gratuito, de una institución seria, para seguir aprendiendo a tu ritmo.</p>
+      <p data-l="pt">Todo mês recomendamos um curso gratuito, de uma instituição séria, para continuar aprendendo no seu ritmo.</p>
+      <p data-l="en">Each month we recommend a free course from a trusted institution, so you can keep learning at your own pace.</p>
     </div>
-    <div class="posts">
-      <a class="post" data-l="es" href="https://www.linkedin.com/pulse/vale-la-pena-empezar-en-ciberseguridad-lo-que-rid1f" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><span class="tag">Carrera</span></div>
-        <div class="body">
-          <time datetime="2026-10-17">17 oct 2026</time>
-          <h3>¿Vale la pena empezar en ciberseguridad? Lo que muestran los datos en las Américas y por dónde entrar</h3>
-          <p>Faltan cientos de miles de profesionales en el continente. Qué dicen los datos y cuáles son los primeros pasos para entrar al área.</p>
-          <span class="more">Leer en LinkedIn →</span>
+    <div class="course reveal">
+      <div class="c-body">
+        <span class="badge" data-l="es">Noviembre 2026</span><span class="badge" data-l="pt">Novembro 2026</span><span class="badge" data-l="en">November 2026</span>
+        <h3 data-l="es">Introducción a la ciberseguridad</h3>
+        <h3 data-l="pt">Introdução à cibersegurança</h3>
+        <h3 data-l="en">Introduction to Cybersecurity</h3>
+        <div class="by">Cisco Networking Academy</div>
+        <p data-l="es">Un primer paso claro: qué amenazas existen, cómo atacan y, sobre todo, cómo proteger tus datos y tu privacidad.</p>
+        <p data-l="pt">Um primeiro passo claro: quais ameaças existem, como atacam e, principalmente, como proteger seus dados e sua privacidade.</p>
+        <p data-l="en">A clear first step: what threats exist, how attacks work and, above all, how to protect your data and privacy.</p>
+        <div class="facts">
+          <span data-l="es">Gratis</span><span data-l="pt">Grátis</span><span data-l="en">Free</span>
+          <span data-l="es">6 horas</span><span data-l="pt">6 horas</span><span data-l="en">6 hours</span>
+          <span data-l="es">A tu ritmo</span><span data-l="pt">No seu ritmo</span><span data-l="en">Self-paced</span>
+          <span data-l="es">Insignia digital</span><span data-l="pt">Selo digital</span><span data-l="en">Digital badge</span>
+          <span>ES · PT · EN</span>
         </div>
-      </a>
-      <a class="post" data-l="pt" href="https://www.linkedin.com/pulse/vale-pena-come%C3%A7ar-em-ciberseguran%C3%A7a-o-que-os-dados-m9ugf" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><span class="tag">Carreira</span></div>
-        <div class="body">
-          <time datetime="2026-10-17">17 out 2026</time>
-          <h3>Vale a pena começar em cibersegurança? O que os dados mostram nas Américas e por onde entrar</h3>
-          <p>Faltam centenas de milhares de profissionais no continente. O que os dados mostram e quais são os primeiros passos para entrar na área.</p>
-          <span class="more">Ler no LinkedIn →</span>
-        </div>
-      </a>
-      <a class="post" data-l="en" href="https://www.linkedin.com/pulse/worth-starting-career-cybersecurity-what-data-ggubf" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><span class="tag">Careers</span></div>
-        <div class="body">
-          <time datetime="2026-10-17">Oct 17, 2026</time>
-          <h3>Is it worth starting a career in cybersecurity? What the data shows across the Americas, and where to begin</h3>
-          <p>The continent is short hundreds of thousands of professionals. What the data says and the first steps to get into the field.</p>
-          <span class="more">Read on LinkedIn →</span>
-        </div>
-      </a>
-      <a class="post" data-l="es" href="https://www.linkedin.com/pulse/seis-d%C3%ADgitos-que-valen-tu-identidad-c%C3%B3mo-roban-ltxyf" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12Z"/><rect x="9" y="10.5" width="6" height="5" rx="1"/><path d="M10.5 10.5V9a1.5 1.5 0 0 1 3 0v1.5"/></svg><span class="tag">WhatsApp</span></div>
-        <div class="body">
-          <time datetime="2026-10-12">12 oct 2026</time>
-          <h3>Seis dígitos que valen tu identidad: cómo roban cuentas de WhatsApp en las Américas (y cómo frenarlos)</h3>
-          <p>“Te envié un código por error, ¿me lo reenvías?”. Así empieza uno de los robos más repetidos del continente, y así se frena.</p>
-          <span class="more">Leer en LinkedIn →</span>
-        </div>
-      </a>
-      <a class="post" data-l="pt" href="https://www.linkedin.com/pulse/seis-d%C3%ADgitos-que-valem-sua-identidade-como-roubam-aqf1f" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12Z"/><rect x="9" y="10.5" width="6" height="5" rx="1"/><path d="M10.5 10.5V9a1.5 1.5 0 0 1 3 0v1.5"/></svg><span class="tag">WhatsApp</span></div>
-        <div class="body">
-          <time datetime="2026-10-12">12 out 2026</time>
-          <h3>Seis dígitos que valem a sua identidade: como roubam contas de WhatsApp nas Américas (e como impedir)</h3>
-          <p>“Te mandei um código por engano, pode me reenviar?”. Assim começa um dos golpes mais comuns do continente, e assim se impede.</p>
-          <span class="more">Ler no LinkedIn →</span>
-        </div>
-      </a>
-      <a class="post" data-l="en" href="https://www.linkedin.com/pulse/six-digits-unlock-your-identity-how-whatsapp-accounts-wioxf" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12Z"/><rect x="9" y="10.5" width="6" height="5" rx="1"/><path d="M10.5 10.5V9a1.5 1.5 0 0 1 3 0v1.5"/></svg><span class="tag">WhatsApp</span></div>
-        <div class="body">
-          <time datetime="2026-10-12">Oct 12, 2026</time>
-          <h3>Six Digits That Unlock Your Identity: How WhatsApp Accounts Get Hijacked Across the Americas (and How to Stop It)</h3>
-          <p>“I sent you a code by mistake, can you send it back?” That’s how one of the most common scams in the Americas starts, and how to stop it.</p>
-          <span class="more">Read on LinkedIn →</span>
-        </div>
-      </a>
-      <a class="post" data-l="es" href="https://www.linkedin.com/pulse/la-contrase%C3%B1a-ya-alcanza-cuatro-h%C3%A1bitos-para-era-dv8nf" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14 9l2 2"/></svg><span class="tag">Contraseñas</span></div>
-        <div class="body">
-          <time datetime="2026-10-05">5 oct 2026</time>
-          <h3>La contraseña ya no alcanza: cuatro hábitos para la era de las estafas con IA</h3>
-          <p>Las estafas digitales crecen de Canadá a Uruguay. Cuatro hábitos simples que te protegen aunque el engaño use inteligencia artificial.</p>
-          <span class="more">Leer en LinkedIn →</span>
-        </div>
-      </a>
-      <a class="post" data-l="pt" href="https://www.linkedin.com/pulse/senha-j%C3%A1-n%C3%A3o-basta-quatro-h%C3%A1bitos-para-era-dos-g9i7f" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14 9l2 2"/></svg><span class="tag">Senhas</span></div>
-        <div class="body">
-          <time datetime="2026-10-05">5 out 2026</time>
-          <h3>A senha já não basta: quatro hábitos para a era dos golpes com IA</h3>
-          <p>Os golpes digitais crescem do Canadá ao Uruguai. Quatro hábitos simples que protegem você mesmo quando o golpe usa inteligência artificial.</p>
-          <span class="more">Ler no LinkedIn →</span>
-        </div>
-      </a>
-      <a class="post" data-l="en" href="https://www.linkedin.com/pulse/passwords-longer-enough-four-habits-age-ai-scams-ebcwf" target="_blank" rel="noopener">
-        <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14 9l2 2"/></svg><span class="tag">Passwords</span></div>
-        <div class="body">
-          <time datetime="2026-10-05">Oct 5, 2026</time>
-          <h3>Passwords Are No Longer Enough: Four Habits for the Age of AI Scams</h3>
-          <p>Online fraud is rising from Canada to Uruguay. Four simple habits that keep you safe, even when the scam uses AI.</p>
-          <span class="more">Read on LinkedIn →</span>
-        </div>
-      </a>
-    </div>
-    <div class="posts-all">
-      <a class="btn btn-ghost" href="https://www.linkedin.com/company/tecdi-uy-ciberseguridad/posts/?feedView=articles" target="_blank" rel="noopener">
-        <span data-l="es">Ver todos los artículos en LinkedIn</span>
-        <span data-l="pt">Ver todos os artigos no LinkedIn</span>
-        <span data-l="en">See all articles on LinkedIn</span>
-      </a>
+        <a class="btn btn-wa" href="https://www.netacad.com/courses/introduction-to-cybersecurity" target="_blank" rel="noopener">
+          <span data-l="es">Ir al curso</span><span data-l="pt">Ir ao curso</span><span data-l="en">Go to the course</span>
+        </a>
+        <span class="note" data-l="es">Recomendación independiente: TeCDi no tiene relación con la institución que dicta el curso. Elige tu idioma en la página del curso.</span>
+        <span class="note" data-l="pt">Recomendação independente: o TeCDi não tem relação com a instituição que oferece o curso. Escolha seu idioma na página do curso.</span>
+        <span class="note" data-l="en">Independent recommendation: TeCDi is not affiliated with the course provider. Pick your language on the course page.</span>
+      </div>
+      <div class="c-side">
+        <ul data-l="es"><li>Amenazas y ataques más comunes</li><li>Cómo proteger tus datos y tu privacidad</li><li>Buenas prácticas para el día a día</li><li>Ideal si nunca estudiaste el tema</li></ul>
+        <ul data-l="pt"><li>Ameaças e ataques mais comuns</li><li>Como proteger seus dados e sua privacidade</li><li>Boas práticas para o dia a dia</li><li>Ideal se você nunca estudou o tema</li></ul>
+        <ul data-l="en"><li>The most common threats and attacks</li><li>How to protect your data and privacy</li><li>Everyday good practices</li><li>Great if you're new to the topic</li></ul>
+      </div>
     </div>
   </div>
 </section>
@@ -509,7 +601,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <p data-l="pt">Os golpes atravessam fronteiras: mudam o idioma e a moeda, mas o truque é o mesmo. Por isso o TeCDi fala três idiomas, do Canadá à Patagônia, com dados de cada país.</p>
       <p data-l="en">Scams cross borders: the language and currency change, but the trick stays the same. That's why TeCDi speaks three languages, from Canada to Patagonia, with data from each country.</p>
     </div>
-    <div class="lang-cards">
+    <div class="lang-cards reveal">
       <div class="lang-card"><i>ES</i><div><b>Español</b>
         <span data-l="es">Neutro y cercano, para toda Hispanoamérica.</span><span data-l="pt">Neutro e próximo, para toda a América hispânica.</span><span data-l="en">Neutral and friendly, for all of Spanish-speaking America.</span></div></div>
       <div class="lang-card"><i>PT</i><div><b>Português</b>
@@ -523,12 +615,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <!-- CANALES -->
 <section id="canales">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
       <h2 data-l="es">Síguenos donde estés</h2>
       <h2 data-l="pt">Siga a gente onde você estiver</h2>
       <h2 data-l="en">Follow us wherever you are</h2>
     </div>
-    <div class="channels">
+    <div class="channels reveal">
       <a class="ch wa" href="https://whatsapp.com/channel/0029VbDzyfh8vd1LbCXTzX04" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="#25d366" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
         <b>WhatsApp</b>
@@ -549,6 +641,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <svg viewBox="0 0 24 24" fill="#e9edf3" aria-hidden="true"><path d="M16.6 3c.3 2.1 1.6 3.6 3.9 3.8v3.1a7 7 0 0 1-3.9-1.2v6.2A5.9 5.9 0 1 1 10.7 9v3.2a2.8 2.8 0 1 0 2.1 2.7V3h3.8Z"/></svg>
         <b>TikTok</b>
         <span>@tecdi.uy</span>
+      </a>
+      <a class="ch" href="https://www.youtube.com/@tecdiuy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1L10 15.1Z"/></svg>
+        <b>YouTube</b>
+        <span>@tecdiuy</span>
       </a>
     </div>
   </div>
@@ -612,6 +709,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var l=e.target && e.target.getAttribute && e.target.getAttribute("data-set");
     if(l) set(l);
   });
+})();
+
+(function(){
+  var imgs=document.querySelectorAll("img[data-fb]");
+  for(var i=0;i<imgs.length;i++){ imgs[i].addEventListener("error",function(){ var f=this.getAttribute("data-fb"); if(f && this.src!==f){ this.src=f; } }); }
+  var els=document.querySelectorAll(".reveal");
+  if(!("IntersectionObserver" in window)){ for(var j=0;j<els.length;j++) els[j].classList.add("in"); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); },{rootMargin:"0px 0px -8% 0px"});
+  for(var k=0;k<els.length;k++) io.observe(els[k]);
 })();
 </script>
 </body>
